@@ -52,6 +52,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.openscience.cdk.geometry.GeometryUtil;
 
 /**
  *
@@ -104,8 +105,8 @@ public class FileHandler {
     try {
       final InputStream file = new BufferedInputStream(new FileInputStream(
           path.toFile()));
-      final ISimpleChemObjectReader reader = new ReaderFactory()
-      .createReader(file);
+      final ISimpleChemObjectReader reader = new ReaderFactory().
+          createReader(file);
       IChemFile cFile = null;
       cFile = reader.read(SilentChemObjectBuilder.getInstance().
           newInstance(IChemFile.class));

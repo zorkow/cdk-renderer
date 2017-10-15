@@ -438,7 +438,7 @@ public class SVGRenderer extends AbstractRenderer<Node> {
 
       // before or after
       // add elements in order
-      if (element.alignment == 2) {
+      if (element.alignment != -1) {
         df.appendChild(elem);
         df.appendChild(Hx);
       } else {
